@@ -2,6 +2,11 @@
 @section('content_users')
 
 <div class="container">
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <h1>Daftar Mobil yang Disewa</h1>
 
     @if ($carsRented->isEmpty())
