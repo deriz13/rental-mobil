@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use Session;
 
 class AuthController extends Controller
 {
@@ -67,6 +68,13 @@ class AuthController extends Controller
         } catch(\Exception $e) {
             return redirect()->route('register')->withInput()->withErrors(['msg' => 'Pendaftaran Gagal']);
         }
+    }
+
+    public function logout() {
+        Session::flush();
+        Auth::logout();
+
+        return Redirect('login');
     }
 
 }
