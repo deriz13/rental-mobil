@@ -3,7 +3,7 @@
     <div class="row align-items-center py-1 px-xl-4">
         <div class="col-lg-4 d-none d-lg-block">
             <a href="{{ url('/') }}" class="text-decoration-none">
-                <h4 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">B</span>Balisuntours</h4>
+                <h4 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">R</span>Rental Mobil</h4>
             </a>
         </div>
         <div class="col-lg-6 col-6 text-center">
