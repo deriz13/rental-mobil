@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\User\HomeController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -17,3 +18,5 @@ Route::post('login', [AuthController::class, 'loginPost'])->name('login');
 Route::get('register', [AuthController::class, 'register'])->name('register.index');
 Route::post('register/action', [AuthController::class, 'registerPost'])->name('register');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('home', [HomeController::class, 'index'])->name('index');
+Route::get('/cars/search', [HomeController::class, 'search'])->name('cars.search');
