@@ -19,27 +19,30 @@ Cars
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h5 class="card-title">Cars Table</h5>
-                    <button class="btn btn-primary">Create Cars</button>
+                    <a href="{{ route('cars.create') }}" class="btn btn-primary">Create Cars</a>
                 </div>
               <table class="table datatable">
                 <thead>
                   <tr>
+                    <th>#</th>
                     <th>Image</th>
                     <th>Name</th>
                     <th>model</th>
                     <th>Nomor Plat</th>
                     <th>Tarif Sewa Perhari</th>
-                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
+                @foreach($cars as $car)
                   <tr>
-                    <td>Unity Pugh</td>
-                    <td>9958</td>
-                    <td>Curicó</td>
-                    <td>2005/02/11</td>
-                    <td>37%</td>
+                    <td>{{ $loop->index + 1 }}</td>
+                    <td><img src="{{ asset('uploads/cars/' . $car->avatar) }}" style="max-width: 100px; max-height: 100px;" /></td>
+                    <td>{{ $car->name }}</td>
+                    <td>{{ $car->model }}</td>
+                    <td>{{ $car->no_plat }}</td>
+                    <td>{{ $car->rental_rate_day }}</td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
