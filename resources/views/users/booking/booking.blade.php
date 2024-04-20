@@ -10,6 +10,11 @@
                     <img src="{{ asset('uploads/cars/' . $car->avatar) }}" alt="Avatar Mobil" class="img-fluid" style="max-width: 200px;">
                 </div>
                 <div class="card-body">
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                     @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}

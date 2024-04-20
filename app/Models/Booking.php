@@ -13,7 +13,8 @@ class Booking extends Model
         'car_id',
         'user_id',
         'start_date',
-        'end_date'
+        'end_date',
+        'return_date'
     ];
 
     public function car()
