@@ -4,12 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 
 class AuthController extends Controller
 {
     public function login()
     {
         return view('login');
+    }
+
+    public function loginPost(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'password' => 'required',
+        ]);
+        
+        
+        $credentials = $request->only('name', 'password');
+        if (Auth::attempt($credentials)) {
+            if (Auth::user()->role == "ADMIN") {
+                return redirect("cars")->withSuccess('Signed in');
+            }
+            if (Auth::user()->role == "USER") {
+                return redirect("user")->withSuccess('Signed in');
+            }
+        }
+        
+        return redirect("login")->withSuccess('Login details are not valid');
     }
 
     public function register()
