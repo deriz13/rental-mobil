@@ -13,7 +13,7 @@
         <div class="col-lg-2 col-6 text-right">
             <div class="dropdown">
                 <a class="btn border" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-users" style="color: #FF6600;"></i>
+                  <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="{{ route('rental_listing') }}">Daftar Sewa</a>
