@@ -1,19 +1,3 @@
-@if (Session::has('error'))
-    <div id="errorAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ Session::get('error') }}
-    </div>
-@endif
-@if (session()->has('success'))
-    <div class="alert alert-success">
-        {{ session()->get('success') }}
-    </div>
-@endif
-@if ($errors->has('email'))
-    <div class="alert alert-danger">
-        {{ $errors->first('email') }}
-    </div>
-@endif
-
 
 <div class="container-fluid">
     <div class="row align-items-center py-1 px-xl-4">

@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-center bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0">
+                        <a href="{{ route('cars.booking', ['id' => $car->id]) }}" class="btn btn-sm text-dark p-0">
                             <i class="fas fa-eye text-primary mr-1"></i>Sewa
                         </a>
                     </div>

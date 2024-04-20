@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CarsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\BookingController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -20,3 +21,5 @@ Route::post('register/action', [AuthController::class, 'registerPost'])->name('r
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('home', [HomeController::class, 'index'])->name('index');
 Route::get('/cars/search', [HomeController::class, 'search'])->name('cars.search');
+Route::get('/cars/{id}/booking', [BookingController::class, 'index'])->name('cars.booking');
+Route::post('cars/booking', [BookingController::class, 'store'])->name('booking.store');  
