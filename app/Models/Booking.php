@@ -11,12 +11,13 @@ class Booking extends Model
 
     protected $fillable = [
         'car_id',
+        'user_id',
         'start_date',
         'end_date'
     ];
 
     public function car()
     {
-        return $this->belongsTo(Car::class);
+        return $this->belongsTo(Cars::class);
     }
 }

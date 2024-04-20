@@ -22,4 +22,5 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('home', [HomeController::class, 'index'])->name('index');
 Route::get('/cars/search', [HomeController::class, 'search'])->name('cars.search');
 Route::get('/cars/{id}/booking', [BookingController::class, 'index'])->name('cars.booking');
-Route::post('cars/booking', [BookingController::class, 'store'])->name('booking.store');  
+Route::post('cars/booking', [BookingController::class, 'store'])->name('booking.store');
+Route::get('/cars/rental', [BookingController::class, 'carsRental'])->name('rental_listing');

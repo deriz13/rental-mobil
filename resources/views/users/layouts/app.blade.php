@@ -46,7 +46,7 @@
 
 
     <!-- Footer Start -->
-    @include('users.layouts.footer')
+    
     <!-- Footer End -->
 
 

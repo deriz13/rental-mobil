@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Cars;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Session;
+use Auth;
 
 class BookingController extends Controller
 {
@@ -55,6 +56,7 @@ class BookingController extends Controller
         try {
             Booking::create([
                 'car_id' => $carId,
+                'user_id' => Auth::id(),
                 'start_date' => $startDate,
                 'end_date' => $endDate,
             ]);
@@ -62,7 +64,17 @@ class BookingController extends Controller
             return redirect()->route('cars.booking', ['id' => $carId])
                 ->with('success', 'Mobil Berhasil Disewa');
         } catch(\Exception $e) {
+            dd($e);
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menyimpan pemesanan.');
         }
+    }
+
+    public function carsRental()
+    {
+        $user = Auth::user();
+    
+        $carsRented = $user->bookings()->with('car')->get();
+    
+        return view('users.booking.carsbooking', compact('carsRented'));
     }
 }

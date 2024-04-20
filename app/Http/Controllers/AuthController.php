@@ -28,7 +28,7 @@ class AuthController extends Controller
                 return redirect("cars")->withSuccess('Signed in');
             }
             if (Auth::user()->role == "USER") {
-                return redirect("user")->withSuccess('Signed in');
+                return redirect("home")->withSuccess('Signed in');
             }
         }
         
