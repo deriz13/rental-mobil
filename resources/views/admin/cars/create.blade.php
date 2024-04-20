@@ -5,13 +5,13 @@ Agenda
 @endsection
 
 @section('breadcrumb')
-<nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Forms</li>
-          <li class="breadcrumb-item active">Elements</li>
+	<nav>
+		<ol class="breadcrumb">
+        	<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          	<li class="breadcrumb-item">Forms</li>
+          	<li class="breadcrumb-item active">Elements</li>
         </ol>
-      </nav>
+	</nav>
 @endsection
 
 @section('content')
@@ -61,13 +61,11 @@ Agenda
 					</div>
 				</div>
       		</div>
-
-      <div class="card-action">
+      		<div class="card-action">
 				<button class="btn btn-success">Submit</button>
 				<a href="{{ route('cars.index') }}" class="btn btn-danger">Cancel</a>
 			</div>
-			</form>
-
+		</form>
     </div>
   </div>
 </div>
